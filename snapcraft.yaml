@@ -12,7 +12,8 @@ apps:
   reboot:
     daemon: oneshot
     timer: "00:00-24:00/24"
-    command: reboot now
+    command: shutdown -r
+    plugs: [shutdown]
 
 architectures:
   - build-on: armhf
