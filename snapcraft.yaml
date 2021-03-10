@@ -1,5 +1,5 @@
 name: rebootimer
-base: core 18
+base: core18
 version: '0.1'
 summary: Reboot every hour.
 description: |
@@ -19,3 +19,7 @@ architectures:
     run-on: armhf
   - build-on: arm64
     run-on: arm64
+    
+parts:
+  no-part:
+    plugin: nil    
