@@ -1,6 +1,6 @@
 name: rebootimer
 base: core18
-version: '0.1'
+version: '1.0'
 summary: Reboot every hour.
 description: |
   Use this snap to reboot rpi.
@@ -12,9 +12,16 @@ apps:
   reboot:
     daemon: oneshot
     timer: "00:00-24:00/24"
-    command: shutdown -r
+    command-chain:
+    -COUNT=$((COUNT+1))
+    -if [ "$COUNT" -eq 2 ]; then shutdown -r now fi
+    command: echo "shutdown"
     plugs: [shutdown]
-
+  setcounter:
+    daemon:oneshot
+    command: COUNT=0
+    before: reboot
+     
 architectures:
   - build-on: armhf
     run-on: armhf
