@@ -11,16 +11,10 @@ confinement: devmode
 apps:     
   reboot:
     daemon: oneshot
-    timer: "00:00-24:00/24"
-    command-chain:
-    -COUNT=$((COUNT+1))
-    -if [ "$COUNT" -eq 2 ]; then shutdown -r now fi
-    command: echo "shutdown"
+    timer: "00:00-24:00/48"
+    command: shutdown -r now 
     plugs: [shutdown]
-  setcounter:
-    daemon:oneshot
-    command: COUNT=0
-    before: reboot
+
      
 architectures:
   - build-on: armhf
