@@ -1,4 +1,4 @@
-name: rebootimer
+name: rebootimer 
 base: core18
 version: '1.0'
 summary: Reboot every hour.
