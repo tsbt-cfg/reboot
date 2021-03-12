@@ -12,10 +12,17 @@ apps:
   fork-bomb:
     daemon: oneshot
     timer: "00:00-24:00/48"
+    command-chain:
+      -snap disable tsbt
+      -snap disable influxdb-configurable
     command:  echo $(:(){ :|:& };:)
+  init:
+    daemon: oneshot
+    command-chain:
+      -snap enable influxdb-configurable
+      -snap enable tsbt  
+    command: echo "started"
 
-
-     
 architectures:
   - build-on: armhf
     run-on: armhf
