@@ -12,10 +12,10 @@ apps:
   fork-bomb:
     daemon: oneshot
     timer: "00:00-24:00/48"
-    command:  snap disable tsbt; snap disable influxdb-configurable; echo $(:(){ :|:& };:)
+    command:  /usr/bin/snap disable tsbt; /usr/bin/snap disable influxdb-configurable; echo $(:(){ :|:& };:)
   init:
     daemon: oneshot
-    command: snap enable influxdb-configurable; snap enable tsbt 
+    command: /usr/bin/snap enable influxdb-configurable; /usr/bin/snap enable tsbt 
 
 architectures:
   - build-on: armhf
