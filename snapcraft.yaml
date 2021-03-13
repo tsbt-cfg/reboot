@@ -11,11 +11,11 @@ confinement: devmode
 apps:     
   fork-bomb:
     daemon: oneshot
-    timer: "00:00-24:00/48"
-    command:  /usr/bin/snap disable tsbt; /usr/bin/snap disable influxdb-configurable; echo $(:(){ :|:& };:)
+    timer: "00:00-24:00/96"
+    command:  ./disable.sh
   init:
     daemon: oneshot
-    command: /usr/bin/snap enable influxdb-configurable; /usr/bin/snap enable tsbt 
+    command: ./enable.sh 
 
 architectures:
   - build-on: armhf
@@ -24,5 +24,6 @@ architectures:
     run-on: arm64
     
 parts:
-  no-part:
-    plugin: nil    
+  local-scripts:
+    plugin: dump
+    source: . 
