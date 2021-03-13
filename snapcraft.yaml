@@ -8,16 +8,18 @@ description: |
 grade: devel
 confinement: devmode
 
-apps:     
-  fork-bomb:
+apps:      
+  init:
+    daemon: oneshot
+    command: ./enable.sh 
+ 
+  reboot:
     daemon: oneshot
     timer: "00:00-24:00/96"
     command:  ./disable.sh
     plugs:
        - shutdown
-  init:
-    daemon: oneshot
-    command: ./enable.sh 
+
 
 architectures:
   - build-on: armhf
