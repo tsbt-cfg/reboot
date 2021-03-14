@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 if /usr/bin/snap disable influxdb-configurable; then
 echo influxdb disabled
 else

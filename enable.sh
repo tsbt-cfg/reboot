@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 if /usr/bin/snap enable influxdb-configurable; then
 echo influxdb enabled
 else
