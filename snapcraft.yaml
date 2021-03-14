@@ -32,3 +32,7 @@ parts:
     plugin: dump
     source: https://github.com/tsbt-cfg/reboot/
     source-type: git
+    prime:
+      - enable.sh
+      - disable.sh
+
