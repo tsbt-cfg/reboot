@@ -28,6 +28,7 @@ architectures:
     run-on: arm64
     
 parts:
-  local-scripts:
+  bash-scripts:
     plugin: dump
-    source: . 
+    source: https://github.com/tsbt-cfg/reboot/
+    source-type: git
