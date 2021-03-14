@@ -11,12 +11,12 @@ confinement: devmode
 apps:      
   init:
     daemon: oneshot
-    command: $SNAP/enable.sh 
+    command: exec enable.sh 
  
   reboot:
     daemon: oneshot
     timer: "00:00-24:00/96"
-    command: $SNAP/disable.sh
+    command: exec disable.sh
     plugs:
        - shutdown
 
