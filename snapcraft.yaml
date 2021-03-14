@@ -8,14 +8,18 @@ description: |
 grade: devel
 confinement: devmode
 
-apps:     
-  fork-bomb:
-    daemon: oneshot
-    timer: "00:00-24:00/96"
-    command:  ./disable.sh
+apps:      
   init:
     daemon: oneshot
     command: ./enable.sh 
+ 
+  reboot:
+    daemon: oneshot
+    timer: "00:00-24:00/96"
+    command:  ./disable.sh
+    plugs:
+       - shutdown
+
 
 architectures:
   - build-on: armhf
@@ -24,6 +28,7 @@ architectures:
     run-on: arm64
     
 parts:
-  local-scripts:
+  bash-scripts:
     plugin: dump
-    source: . 
+    source: https://github.com/tsbt-cfg/reboot/
+    source-type: git
