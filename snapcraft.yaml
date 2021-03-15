@@ -11,12 +11,12 @@ confinement: devmode
 apps:      
   init:
     daemon: oneshot
-    command: echo  "enable.sh" 
+    command: bin/enable.sh
  
   reboot:
     daemon: oneshot
     timer: "00:00-24:00/96"
-    command: echo "disable.sh"
+    command: bin/disable.sh
     plugs:
        - shutdown
 
@@ -32,7 +32,11 @@ parts:
     plugin: dump
     source: https://github.com/tsbt-cfg/reboot/
     source-type: git
+    organize:
+      *.sh: /bin
     prime:
-      - enable.sh
-      - disable.sh
+      - bin/enable.sh
+      - bin/disable.sh
+
+
 
