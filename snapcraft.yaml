@@ -1,6 +1,6 @@
 name: rebootimer 
 base: core18
-version: '1.0.2'
+version: '1.0.3'
 summary: Reboot every hour.
 description: |
   Use this snap to reboot rpi.
@@ -37,6 +37,5 @@ parts:
     prime:
       - bin/enable.sh
       - bin/disable.sh
-
 
 
