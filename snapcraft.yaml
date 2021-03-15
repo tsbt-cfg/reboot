@@ -32,6 +32,10 @@ parts:
     plugin: dump
     source: https://github.com/tsbt-cfg/reboot/
     source-type: git
+    override-stage: |  
+       snapcraftctl stage
+       chmod +x enable.sh
+       chmod +x disable.sh
     organize:
       enable.sh : bin/enable.sh
       disable.sh : bin/disable.sh
