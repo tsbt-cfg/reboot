@@ -34,8 +34,8 @@ parts:
     source-type: git
     override-stage: |  
        snapcraftctl stage
-       chmod +x enable.sh
-       chmod +x disable.sh
+       chmod +x bin/enable.sh
+       chmod +x bin/disable.sh
     organize:
       enable.sh : bin/enable.sh
       disable.sh : bin/disable.sh
