@@ -33,9 +33,8 @@ parts:
     source: https://github.com/tsbt-cfg/reboot/
     source-type: git
     organize:
-      - bin/ : enable.sh
-      - bin/ : disable.sh
-: /bin
+      - enable.sh : bin/enable.sh
+      - disable.sh : bin/disable.sh
     prime:
       - bin/enable.sh
       - bin/disable.sh
