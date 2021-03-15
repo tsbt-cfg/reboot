@@ -11,7 +11,7 @@ confinement: devmode
 apps:      
   init:
     daemon: oneshot
-    command: bin/enable
+    command: bin/enable.sh
  
   reboot:
     daemon: oneshot
