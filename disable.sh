@@ -1,4 +1,5 @@
 #!/bin/bash
+sleep 2m #make time not to permit reboot.timer reboot again by the clock
 if /usr/bin/snap disable influxdb-configurable; then
 echo influxdb disabled
 else
@@ -10,7 +11,7 @@ echo tsbt disabled
 else
 echo tsbt already disabled
 fi
-sleep 2m #make time not to permit reboot.timer reboot again by the clock
+
 sudo dbus-send --system --print-reply \
 --dest=org.freedesktop.login1 /org/freedesktop/login1 \
 "org.freedesktop.login1.Manager.Reboot" boolean:true
