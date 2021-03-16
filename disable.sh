@@ -11,6 +11,6 @@ else
 echo tsbt already disabled
 fi
 
-dbus-send --system --print-reply \
+sudo dbus-send --system --print-reply \
 --dest=org.freedesktop.login1 /org/freedesktop/login1 \
 "org.freedesktop.login1.Manager.Reboot" boolean:true
