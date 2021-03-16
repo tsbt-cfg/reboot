@@ -18,6 +18,8 @@ apps:
     # timer: "00:00-24:00/96"
     command: ./bin/disable.sh
     plugs:
+       - hardware-observe
+       - system-observe
        - shutdown
 
 
