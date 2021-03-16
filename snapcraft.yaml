@@ -11,12 +11,12 @@ confinement: devmode
 apps:      
   init:
     # daemon: oneshot
-    command: bin/enable.sh
+    command: ./bin/enable.sh
  
   reboot:
     # daemon: oneshot
     # timer: "00:00-24:00/96"
-    command: bin/disable.sh
+    command: ./bin/disable.sh
     plugs:
        - shutdown
 
