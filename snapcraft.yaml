@@ -1,7 +1,7 @@
 name: rebootimer 
 base: core18
-version: '1.0.6'
-summary: Reboot every  4 hours. (random)
+version: '1.1.0'
+summary: Reboot every  4 hours. (random), unload and test connection
 description: |
   Use this snap to reboot rpi.
   
@@ -15,8 +15,19 @@ apps:
  
   reboot:
     daemon: oneshot
-    timer: "00:00~24:00/6" #every 4 hours random
+    timer: "00:00~24:00/6" #reboot every 4 hours random
     command: ./bin/disable.sh
+    plugs:
+       - shutdown
+  unload:
+    daemon: oneshot #disable/enable influxdb and tsbt on high load
+    timer: "00:00~24:00/288" #every 5 minutes random
+    command: ./bin/unload.sh    
+
+  reconnect: #shutdown modem
+    daemon: oneshot
+    timer: "00:00~24:00/288" #test connection every 5 min
+    command: ./bin/reconnectInternet.sh
     plugs:
        - shutdown
 
@@ -36,11 +47,17 @@ parts:
        snapcraftctl stage
        chmod +x bin/enable.sh
        chmod +x bin/disable.sh
+       chmod +x bin/unload.sh
+       chmod +x bin/reconnectInternet.sh
     organize:
       enable.sh : bin/enable.sh
       disable.sh : bin/disable.sh
+      unload.sh : bin/unload.sh
+      reconnectInternet.sh : bin/reconnectInternet.sh
     prime:
       - bin/enable.sh
       - bin/disable.sh
+      - bin/unload.sh
+      - bin/reconnectInternet.sh
 
 
