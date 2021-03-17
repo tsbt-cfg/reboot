@@ -1,6 +1,6 @@
 name: rebootimer 
 base: core18
-version: '1.1.0'
+version: '1.1.1'
 summary: Reboot every  4 hours. (random), unload and test connection
 description: |
   Use this snap to reboot rpi.
