@@ -26,7 +26,7 @@ apps:
 
   reconnect: #shutdown modem
     daemon: oneshot
-    timer: "00:00~24:00/288" #test connection every 5 min
+    timer: "00:00~24:00/48" #test connection every 30 min
     command: ./bin/reconnectInternet.sh
     plugs:
        - shutdown
