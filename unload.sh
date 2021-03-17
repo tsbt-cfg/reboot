@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 NOTIFY="2.5"
 
 FTEXT='load average:'
