@@ -15,7 +15,7 @@ apps:
  
   reboot:
     daemon: oneshot
-    timer: "00:00-24:00/96"
+    timer: "00:00-24:00/24"
     command: ./bin/disable.sh
     plugs:
        - shutdown
