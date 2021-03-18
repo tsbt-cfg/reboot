@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 CONNECTION=$(speed-test --json)
 ISNOTCONNECTED=`echo $CONNECTION | awk -F'error' '{ print $2 }'| sed 's/ //g'`
 
