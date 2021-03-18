@@ -32,6 +32,9 @@ apps:
        - shutdown
        - network
        - network-bind
+  speed-test:
+    command: speed-test
+    plugs: [network-bind]
 
 
 architectures:
@@ -63,10 +66,9 @@ parts:
       - bin/disable.sh
       - bin/unload.sh
       - bin/reconnectInternet.sh
-  speed:
-    plugin: nil
-    stage-snaps:
-      - speed-test/latest/stable
 
+  speed-test:
+    plugin: nodejs
+    node-packages: [speed-test@2.1.0]
 
 
