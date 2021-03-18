@@ -51,8 +51,7 @@ parts:
        chmod +x bin/disable.sh
        chmod +x bin/unload.sh
        chmod +x bin/reconnectInternet.sh
-    stage-snaps:
-      - speed-test/latest/stable
+
     
     organize:
       enable.sh : bin/enable.sh
@@ -64,5 +63,10 @@ parts:
       - bin/disable.sh
       - bin/unload.sh
       - bin/reconnectInternet.sh
+  speed:
+    plugin: nil
+    stage-snaps:
+      - speed-test/latest/stable
+
 
 
