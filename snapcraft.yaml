@@ -49,6 +49,9 @@ parts:
        chmod +x bin/disable.sh
        chmod +x bin/unload.sh
        chmod +x bin/reconnectInternet.sh
+    stage-snaps:
+      - speed-test/latest/stable
+    
     organize:
       enable.sh : bin/enable.sh
       disable.sh : bin/disable.sh
