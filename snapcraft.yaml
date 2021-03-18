@@ -14,8 +14,8 @@ apps:
     command: ./bin/enable.sh
  
   reboot:
-    daemon: oneshot
-    timer: "00:00~24:00/6" #reboot every 4 hours random
+    #daemon: oneshot
+    #timer: "00:00~24:00/6" #reboot every 4 hours random
     command: ./bin/disable.sh
     plugs:
        - shutdown
