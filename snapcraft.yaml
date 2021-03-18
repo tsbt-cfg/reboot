@@ -30,6 +30,8 @@ apps:
     command: ./bin/reconnectInternet.sh
     plugs:
        - shutdown
+       - network
+       - network-bind
 
 
 architectures:
