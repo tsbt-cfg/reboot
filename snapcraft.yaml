@@ -68,7 +68,8 @@ parts:
       - bin/reconnectInternet.sh
 
   speed-test:
+    source: .
     plugin: nodejs
-    node-packages: [speed-test@2.1.0]
+    build-packages: [npm]
 
 
