@@ -1,7 +1,7 @@
 name: rebootimer 
 base: core18
-version: '1.1.1'
-summary: Reboot every  4 hours. (random), unload and test connection
+version: '1.2.0'
+summary:  unload and test connection
 description: |
   Use this snap to reboot rpi.
   
@@ -32,8 +32,8 @@ apps:
        - shutdown
        - network
        - network-bind
-  speed-test:
-    command: speed-test
+  fast-cli:
+    command: fast
     plugs: [network-bind]
 
 
@@ -67,9 +67,10 @@ parts:
       - bin/unload.sh
       - bin/reconnectInternet.sh
 
-  speed-test:
-    source: .
+  fast-cli:
+    source: https://github.com/sindresorhus/fast-cli.git
+    source-type: git
     plugin: nodejs
-    build-packages: [npm]
+    build-packages: [dump,npm]
 
 
