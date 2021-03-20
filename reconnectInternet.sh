@@ -1,5 +1,5 @@
 #!/bin/bash
-CONNECTION=$(fast --single-line)
+CONNECTION=$(iSpeed/fast --single-line)
 IGNORECASE=1
 ISNOTCONNECTED=`echo $CONNECTION | awk -F[e,E]rror '{ print $2 }'| sed 's/ //g'`
 
