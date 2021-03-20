@@ -35,7 +35,16 @@ apps:
   fast-cli:
     command: node iSpeed/cli.js
     plugs: [network-bind]
-
+    
+    
+node:
+    command: node
+    plugs:
+      - home
+      - network
+      - network-bind
+      - bluetooth-control
+      - network-control
 
 architectures:
   - build-on: armhf
