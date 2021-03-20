@@ -37,14 +37,7 @@ apps:
     plugs: [network-bind]
     
     
-node:
-    command: node
-    plugs:
-      - home
-      - network
-      - network-bind
-      - bluetooth-control
-      - network-control
+
 
 architectures:
   - build-on: armhfrework
@@ -81,6 +74,7 @@ parts:
     source-type: git
     plugin: nodejs
     nodejs-package-manager: [npm]
+    stage-packages: [nodejs]
 
     organize:
       '*': iSpeed/
