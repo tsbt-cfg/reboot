@@ -33,7 +33,7 @@ apps:
        - network
        - network-bind
   fast-cli:
-    command: fast
+    command: node iSpeed/cli.js
     plugs: [network-bind]
 
 
