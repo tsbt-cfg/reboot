@@ -33,7 +33,7 @@ apps:
        - network
        - network-bind
   fast-cli:
-    command: iSpeed/fast
+    command: fast
     plugs: [network-bind]
 
 
