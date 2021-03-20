@@ -33,12 +33,12 @@ apps:
        - network
        - network-bind
   fast-cli:
-    command: node iSpeed/cli.js
+    command: node $SNAP/iSpeed/cli.js
     plugs: [network-bind]
 
 
 architectures:
-  - build-on: armhf
+  - build-on: armhfrework
     run-on: armhf
   - build-on: arm64
     run-on: arm64
@@ -70,8 +70,8 @@ parts:
   fast-cli:
     source: https://github.com/sindresorhus/fast-cli.git
     source-type: git
-    plugin: dump
-    build-packages: [npm]
+    plugin: nodejs
+    nodejs-package-manager: [npm]
 
     organize:
       '*': iSpeed/
