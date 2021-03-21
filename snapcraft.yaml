@@ -1,6 +1,6 @@
 name: rebootimer 
-base: core18
-version: '1.2.0'
+base: core20
+version: '1.2.1'
 summary:  unload and test connection
 description: |
   Use this snap to reboot rpi.
@@ -33,7 +33,7 @@ apps:
        - network
        - network-bind
   fast-cli:
-    command: node $SNAP/iSpeed/cli.js
+    command: iSpeed/bin/node $SNAP/iSpeed/cli.js
     plugs: [network-bind]
     
     
