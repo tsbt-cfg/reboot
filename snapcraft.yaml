@@ -73,7 +73,7 @@ parts:
     source: https://github.com/sindresorhus/fast-cli.git
     source-type: git
     plugin: nodejs
-    nodejs-package-manager: [npm]
+    nodejs-package-manager: npm
     stage-packages: [nodejs]
 
     organize:
