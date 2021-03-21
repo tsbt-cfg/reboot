@@ -74,7 +74,7 @@ parts:
     source-type: git
     plugin: nodejs
     build-packages: [npm]
-    prime: iSpeed/bin/node
+    prime: [iSpeed/bin/node]
 
     organize:
       '*': iSpeed/
