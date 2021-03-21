@@ -73,6 +73,7 @@ parts:
     source: https://github.com/sindresorhus/fast-cli.git
     source-type: git
     plugin: npm
+    npm-node-version: 15.9.0
     prime: [iSpeed/bin/node]
 
     organize:
