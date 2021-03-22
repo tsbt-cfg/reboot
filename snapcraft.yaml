@@ -32,7 +32,8 @@ apps:
        - shutdown
        - network
        - network-bind
-  fast-cli:
+
+  speed-test:
     command: iSpeed/bin/node $SNAP/iSpeed/cli.js
     plugs: [network-bind]
     
@@ -69,13 +70,11 @@ parts:
       - bin/unload.sh
       - bin/reconnectInternet.sh
 
-  fast-cli:
-    source: https://github.com/sindresorhus/fast-cli.git
+  speed-test:
+    source: https://github.com/tsbt-cfg/speed-test.git
     source-type: git
     plugin: npm
     npm-node-version: 15.9.0
-    stage-packages:
-      - libatomic1
     prime: [iSpeed]
 
     organize:
