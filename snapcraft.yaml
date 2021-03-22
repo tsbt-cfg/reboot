@@ -1,10 +1,10 @@
 name: rebootimer 
-base: core18
+base: core20
 version: '1.2.1'
 summary:  unload and test connection
 description: |
-  Use this snap to reboot rpi.
-  
+  Use this snap to reboot rpi if internet connection drops.
+  Also disable/enable influxdb and tsbt if cpu load is greater than 2.5
 grade: devel
 confinement: devmode
 
@@ -40,7 +40,7 @@ apps:
 
 
 architectures:
-  - build-on: armhfrework
+  - build-on: armhf
     run-on: armhf
   - build-on: arm64
     run-on: arm64
@@ -72,16 +72,16 @@ parts:
   fast-cli:
     source: https://github.com/sindresorhus/fast-cli.git
     source-type: git
-    plugin: nodejs
-    nodejs-package-manager: npm
+    plugin: npm
+    npm-node-version: 15.9.0
     prime: [iSpeed/bin/node]
 
     organize:
       '*': iSpeed/
   node:
     command: node
-    plugin: nodejs
-    nodejs-package-manager: npm
+    plugin: npm
+    npm-node-version: 15.9.0
     plugs:
       - home
       - network
