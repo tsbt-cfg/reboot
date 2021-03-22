@@ -72,9 +72,17 @@ parts:
   fast-cli:
     source: https://github.com/sindresorhus/fast-cli.git
     source-type: git
-    plugin: npm
-    npm-node-version: 15.9.0
+    plugin: nodejs
+    nodejs-package-manager: npm
     prime: [iSpeed/bin/node]
 
     organize:
       '*': iSpeed/
+  node:
+    command: node
+    plugs:
+      - home
+      - network
+      - network-bind
+      - bluetooth-control
+      - network-control
