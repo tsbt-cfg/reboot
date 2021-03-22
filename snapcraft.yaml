@@ -68,13 +68,13 @@ parts:
       - bin/disable.sh
       - bin/unload.sh
       - bin/reconnectInternet.sh
-/*
-  speed-test:
-    source: https://github.com/tsbt-cfg/speed-test.git
-    source-type: git
-    plugin: npm
-    npm-node-version: 15.9.0
-*/
+
+ # speed-test:
+ #   source: https://github.com/tsbt-cfg/speed-test.git
+ #   source-type: git
+ #   plugin: npm
+ #   npm-node-version: 15.9.0
+
     
 
   speed-test:
