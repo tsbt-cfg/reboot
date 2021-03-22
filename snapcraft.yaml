@@ -78,13 +78,3 @@ parts:
 
     organize:
       '*': iSpeed/
-  node:
-    command: node
-    plugin: npm
-    npm-node-version: 15.9.0
-    plugs:
-      - home
-      - network
-      - network-bind
-      - bluetooth-control
-      - network-control
