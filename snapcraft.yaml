@@ -80,6 +80,8 @@ parts:
       '*': iSpeed/
   node:
     command: node
+    plugin: nodejs
+    nodejs-package-manager: npm
     plugs:
       - home
       - network
