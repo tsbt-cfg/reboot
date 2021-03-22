@@ -1,5 +1,5 @@
 name: rebootimer 
-base: core20
+base: core18
 version: '1.2.1'
 summary:  unload and test connection
 description: |
