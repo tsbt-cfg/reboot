@@ -22,7 +22,7 @@ apps:
        - shutdown
   unload:
     daemon: oneshot #disable/enable influxdb and tsbt on high load
-    timer: "00:00~24:00/288" #every 5 minutes random
+    timer: "00:00-24:00/144" #every 10 minutes random
     command: ./bin/unload.sh    
 
   reconnect: #shutdown modem
