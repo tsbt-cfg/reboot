@@ -2,6 +2,7 @@ name: rebootimer
 base: core18
 version: '1.2.1'
 summary:  unload and test connection with nmap.nping
+
 description: |
   Use this snap to reboot rpi if internet connection drops.
   Also disable/enable influxdb and tsbt if cpu load is greater than 2.5
