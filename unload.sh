@@ -2,6 +2,7 @@
 NOTIFY="2.5"
 
 FTEXT='load average:'
+`uptime > /dev/tty2`
 LOAD5MIN="$(uptime | awk -F "$FTEXT" '{ print $2 }' | cut -d, -f2 | sed 's/ //g')"
 
 if expr $LOAD5MIN \> $NOTIFY ;then
