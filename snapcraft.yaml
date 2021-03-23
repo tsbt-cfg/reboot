@@ -1,7 +1,7 @@
 name: rebootimer 
 base: core18
 version: '1.2.1'
-summary:  unload and test connection
+summary:  unload and test connection with nmap.nping
 description: |
   Use this snap to reboot rpi if internet connection drops.
   Also disable/enable influxdb and tsbt if cpu load is greater than 2.5
@@ -32,10 +32,7 @@ apps:
        - shutdown
        - network
        - network-bind
-    
-  speed-test:
-    command: speed-test
-    plugs: [network-bind]
+
 
 
 
@@ -69,19 +66,9 @@ parts:
       - bin/unload.sh
       - bin/reconnectInternet.sh
 
- # speed-test:
- #   source: https://github.com/tsbt-cfg/speed-test.git
- #   source-type: git
- #   plugin: npm
- #   npm-node-version: 15.9.0
+  nmap:
+    plugin: nil
+    stage-snaps: [nmap]
 
-    
 
-  speed-test:
-    plugin: nodejs
-    node-packages: [speed-test@2.1.0]
-
-    organize:
-      '*': iSpeed/
-    prime: [iSpeed]
 
