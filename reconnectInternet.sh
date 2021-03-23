@@ -1,5 +1,5 @@
 #!/bin/bash
-CONNECTION=$(fast-cli --single-line)
+CONNECTION=$(speed-test --json)
 IGNORECASE=1
 ISNOTCONNECTED=`echo $CONNECTION | awk -F[e,E]rror '{ print $2 }'| sed 's/ //g'`
 
