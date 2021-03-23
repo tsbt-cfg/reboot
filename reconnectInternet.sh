@@ -1,5 +1,5 @@
 #!/bin/bash
-CONNECTION=$(nmap.nping "noip.com")
+CONNECTION=$(nping "noip.com")
 IGNORECASE=1
 ISCONNECTED=`echo $CONNECTION | awk -F[f,F]'ailed: 0' '{ print $2 }'| sed 's/ //g'`
 
