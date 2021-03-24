@@ -21,8 +21,8 @@ apps:
     plugs:
        - shutdown
   unload:
-    daemon: oneshot #disable/enable influxdb and tsbt on high load
-    timer: "00:00-24:00/144" #every 10 minutes random
+    #daemon: oneshot #disable/enable influxdb and tsbt on high load
+    #timer: "00:00-24:00/144" #every 10 minutes random
     command: ./bin/unload.sh    
 
   reconnect: #shutdown modem
