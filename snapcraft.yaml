@@ -71,5 +71,3 @@ parts:
     plugin: nil
     stage-snaps: [nmap]
 
-
-
