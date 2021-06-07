@@ -24,6 +24,7 @@ apps:
     daemon: oneshot #disable/enable influxdb and tsbt on high load
     timer: "00:00-24:00/144" #every 10 minutes random
     command: ./bin/unload.sh    
+    command-chain: [lifepo4 watchdog_timer 700]
 
   reconnect: #shutdown modem
     daemon: oneshot
