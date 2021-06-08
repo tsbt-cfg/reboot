@@ -69,5 +69,5 @@ parts:
 
   nmap:
     plugin: nil
-    stage-snaps: [nmap, lifepo4]
+    stage-snaps: [nmap]
 
