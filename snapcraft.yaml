@@ -7,7 +7,7 @@ description: |
   Use this snap to reboot rpi if internet connection drops.
   Also disable/enable influxdb and tsbt if cpu load is greater than 2.5
 grade: devel
-confinement: devmode
+confinement: strict
 
 apps:      
   init:
